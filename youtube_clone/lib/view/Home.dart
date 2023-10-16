@@ -5,6 +5,8 @@ import 'package:youtube_clone/view/screens/Subscriptions.dart';
 import 'package:youtube_clone/view/screens/Trending.dart';
 
 class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -15,10 +17,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     List<Widget> screens = [
-      Start(),
-      Shorts(),
-      Trending(),
-      Subscriptions(),
+      const Start(),
+      const Shorts(),
+      const Trending(),
+      const Subscriptions(),
     ];
 
     return Scaffold(
@@ -31,12 +33,15 @@ class _HomeState extends State<Home> {
           height: 22,
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.videocam)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.account_circle)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.videocam)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.account_circle)),
         ],
       ),
-      body: screens[_navIndex],
+      body: Container(
+        padding: const EdgeInsets.all(16),
+        child: screens[_navIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _navIndex,
         onTap: (index) {
