@@ -1,18 +1,18 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:youtube_clone/model/Video.dart';
 
-const YOUTUBE_KEY = "AIzaSyD_-VCnFoWKvt9pL8FF-PQvsAZT05QSOiQ";
-const CHANNEL_ID = "UCwXdFgeE9KYzlDdR7TG9cMw";
-const URL_BASE = "https://www.googleapis.com/youtube/v3/";
+final youtubeKEY = dotenv.env['YOUTUBE_API_KEY'];
+final channelID = dotenv.env['CHANNEL_ID'];
+final urlBase = dotenv.env['URL_BASE'];
 
 class Api {
   Future<List<Video>> search(String search) async {
     List<Video> videoList = List.empty();
 
     http.Response response = await http.get(Uri.parse(
-        "${URL_BASE}search?part=snippet&type=video&maxResults=20&order=date&key=$YOUTUBE_KEY&q=$search"));
+        "${urlBase}search?part=snippet&type=video&maxResults=20&order=date&key=$youtubeKEY&q=$search"));
 
     if (response.statusCode == 200) {
       // debugPrint("resultado" + response.body);
