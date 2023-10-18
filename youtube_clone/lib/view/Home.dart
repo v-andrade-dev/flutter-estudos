@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/CustomSearch.dart';
 import 'package:youtube_clone/view/screens/Shorts.dart';
 import 'package:youtube_clone/view/screens/Start.dart';
 import 'package:youtube_clone/view/screens/Subscriptions.dart';
@@ -13,11 +14,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _navIndex = 0;
+  String? _searchResult = "";
 
   @override
   Widget build(BuildContext context) {
     List<Widget> screens = [
-      const Start(),
+      Start(_searchResult),
       const Shorts(),
       const Trending(),
       const Subscriptions(),
@@ -33,9 +35,16 @@ class _HomeState extends State<Home> {
           height: 22,
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.videocam)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.account_circle)),
+          IconButton(
+              onPressed: () async {
+                String? res = await showSearch(
+                    context: context, delegate: CustomSearch());
+                setState(() {
+                  _searchResult = res;
+                });
+                debugPrint("Pesquisa : $res");
+              },
+              icon: const Icon(Icons.search)),
         ],
       ),
       body: Container(

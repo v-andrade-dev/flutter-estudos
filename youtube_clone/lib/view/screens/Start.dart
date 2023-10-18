@@ -3,22 +3,24 @@ import 'package:youtube_clone/Api.dart';
 import 'package:youtube_clone/model/Video.dart';
 
 class Start extends StatefulWidget {
-  const Start({super.key});
+  Start(this.search);
+
+  String? search = "";
 
   @override
   _StartState createState() => _StartState();
 }
 
 class _StartState extends State<Start> {
+  _getVideos(String search) {
+    Api api = Api();
+    return api.search(search);
+  }
+
   @override
   Widget build(BuildContext context) {
-    _getVideos() {
-      Api api = Api();
-      return api.search("");
-    }
-
     return FutureBuilder<List<Video>>(
-        future: _getVideos(),
+        future: _getVideos(widget.search!),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.none:
