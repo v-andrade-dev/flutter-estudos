@@ -1,16 +1,13 @@
-# youtube_clone
+# Youtube clone
 
-A new Flutter project.
+Projeto de app clone do youtube, consumindo a Youtube API para pesquisa de videos.
 
-## Getting Started
+## Descrição
+O principal objetivo foi recuperar os dados da API. O projeto consiste em um app tentando reproduzir o youtube, home com icone e barra de pesquisa, e navegação na parte inferior.
+O app foi implementado utilizando o widget scaffold como estrutura, sendo a Home como tela principal, utilizando a tela Start onde são exibidos os videos, ao reproduzir, utiliza-se o widget PlayVideo criado com o pacote youtube_flutter_dart.   
 
-This project is a starting point for a Flutter application.
+Home:
+![yt-home](https://github.com/v-andrade-dev/flutter-estudos/assets/99416788/5170fbf3-61aa-4efd-9c54-785255cf7be1)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Video em exibição:
+![yt-video](https://github.com/v-andrade-dev/flutter-estudos/assets/99416788/8906d8fe-7f10-450c-b58f-c0055933d5df)
