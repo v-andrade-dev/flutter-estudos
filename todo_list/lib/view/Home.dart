@@ -18,7 +18,29 @@ class _HomeState extends State<Home> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purple,
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: Text("Adicionar Tarefa"),
+                  content: TextField(
+                    decoration: InputDecoration(labelText: "Digite sua tarefa"),
+                    onChanged: (text) {},
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text("Cancelar"),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text("Salvar"),
+                    )
+                  ],
+                );
+              });
+        },
       ),
       body: Column(children: [
         Expanded(
