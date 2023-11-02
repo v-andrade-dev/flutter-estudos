@@ -10,7 +10,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List _list = [];
-  TextEditingController _controllerTask = TextEditingController();
+  final TextEditingController _controllerTask = TextEditingController();
 
   Future<File> _getFile() async {
     final fileDirectory = await getApplicationDocumentsDirectory();
@@ -60,37 +60,37 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("itens: " + _list.toString());
+    //debugPrint("itens: " + _list.toString());
     return Scaffold(
       appBar: AppBar(
-        title: Text("To do:"),
+        title: const Text("To do:"),
         backgroundColor: Colors.purple,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purple,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () {
           showDialog(
               context: context,
               builder: (context) {
                 return AlertDialog(
-                  title: Text("Adicionar Tarefa"),
+                  title: const Text("Adicionar Tarefa"),
                   content: TextField(
                     controller: _controllerTask,
-                    decoration: InputDecoration(labelText: "Digite sua tarefa"),
-                    onChanged: (text) {},
+                    decoration:
+                        const InputDecoration(labelText: "Digite sua tarefa"),
                   ),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: Text("Cancelar"),
+                      child: const Text("Cancelar"),
                     ),
                     TextButton(
                       onPressed: () {
                         _saveTask();
                       },
-                      child: Text("Salvar"),
+                      child: const Text("Salvar"),
                     )
                   ],
                 );
@@ -102,8 +102,15 @@ class _HomeState extends State<Home> {
             child: ListView.builder(
                 itemCount: _list.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
+                  return CheckboxListTile(
                     title: Text(_list[index]["title"]),
+                    value: _list[index]["checked"],
+                    onChanged: (value) {
+                      setState(() {
+                        _list[index]["checked"] = value;
+                      });
+                      _saveFiles();
+                    },
                   );
                 }))
       ]),
