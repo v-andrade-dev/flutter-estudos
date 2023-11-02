@@ -100,20 +100,42 @@ class _HomeState extends State<Home> {
       body: Column(children: [
         Expanded(
             child: ListView.builder(
-                itemCount: _list.length,
-                itemBuilder: (context, index) {
-                  return CheckboxListTile(
-                    title: Text(_list[index]["title"]),
-                    value: _list[index]["checked"],
-                    onChanged: (value) {
-                      setState(() {
-                        _list[index]["checked"] = value;
-                      });
-                      _saveFiles();
-                    },
-                  );
-                }))
+                itemCount: _list.length, itemBuilder: createListItem))
       ]),
     );
+  }
+
+  Widget createListItem(context, index) {
+    //final task = _list[index]["title"];
+    return Dismissible(
+        key: UniqueKey(),
+        direction: DismissDirection.endToStart,
+        onDismissed: (direction) {
+          _list.removeAt(index);
+          _saveFiles();
+        },
+        background: Container(
+          color: Colors.red,
+          padding: const EdgeInsets.all(16),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Icon(
+                Icons.delete,
+                color: Colors.white,
+              ),
+            ],
+          ),
+        ),
+        child: CheckboxListTile(
+          title: Text(_list[index]["title"]),
+          value: _list[index]["checked"],
+          onChanged: (value) {
+            setState(() {
+              _list[index]["checked"] = value;
+            });
+            _saveFiles();
+          },
+        ));
   }
 }
