@@ -10,6 +10,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List _list = [];
+  Map<String, dynamic> _itemRemoved = Map();
   final TextEditingController _controllerTask = TextEditingController();
 
   Future<File> _getFile() async {
@@ -111,8 +112,24 @@ class _HomeState extends State<Home> {
         key: UniqueKey(),
         direction: DismissDirection.endToStart,
         onDismissed: (direction) {
+          _itemRemoved = _list[index];
           _list.removeAt(index);
           _saveFiles();
+
+          final snackBar = SnackBar(
+            //backgroundColor: Colors.green,
+            duration: const Duration(seconds: 2),
+            content: const Text("Tarefa removida"),
+            action: SnackBarAction(
+                label: "Desfazer",
+                onPressed: () {
+                  setState(() {
+                    _list.insert(index, _itemRemoved);
+                    _saveFiles();
+                  });
+                }),
+          );
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
         background: Container(
           color: Colors.red,
