@@ -63,6 +63,39 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
+  assets:
+  #images import
+  - assets/images/cao.png
+  - assets/images/direitos.png
+  - assets/images/gato.png
+  - assets/images/leao.png
+  - assets/images/macaco.png
+  - assets/images/ovelha.png
+  - assets/images/vaca.png
+  - assets/images/segundo_fundo.png
+  - assets/images/segundo_fundo.jpg
+  - assets/images/1.png
+  - assets/images/2.png
+  - assets/images/3.png
+  - assets/images/4.png
+  - assets/images/5.png
+  - assets/images/6.png
+
+#songs import
+  - assets/songs/cao.mp3
+  - assets/songs/gato.mp3
+  - assets/songs/leao.mp3
+  - assets/songs/macaco.mp3
+  - assets/songs/ovelha.mp3
+  - assets/songs/vaca.mp3
+  - assets/songs/1.mp3
+  - assets/songs/2.mp3
+  - assets/songs/3.mp3
+  - assets/songs/4.mp3
+  - assets/songs/5.mp3
+  - assets/songs/6.mp3
+
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
