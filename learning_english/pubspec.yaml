@@ -67,20 +67,23 @@ flutter:
   assets:
   #images import
   - assets/images/cao.png
-  - assets/images/direitos.png
   - assets/images/gato.png
   - assets/images/leao.png
   - assets/images/macaco.png
   - assets/images/ovelha.png
   - assets/images/vaca.png
-  - assets/images/segundo_fundo.png
-  - assets/images/segundo_fundo.jpg
   - assets/images/1.png
   - assets/images/2.png
   - assets/images/3.png
   - assets/images/4.png
   - assets/images/5.png
   - assets/images/6.png
+  - assets/images/a.png
+  - assets/images/e.png
+  - assets/images/i.png
+  - assets/images/o.png
+  - assets/images/u.png
+
 
 #audio import
   - assets/audio/cao.mp3
@@ -95,6 +98,12 @@ flutter:
   - assets/audio/4.mp3
   - assets/audio/5.mp3
   - assets/audio/6.mp3
+  - assets/audio/a.mp3
+  - assets/audio/e.mp3
+  - assets/audio/i.mp3
+  - assets/audio/o.mp3
+  - assets/audio/u.mp3
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
