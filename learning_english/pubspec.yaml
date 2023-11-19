@@ -35,7 +35,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-
+  audioplayers: ^5.2.1
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -81,19 +82,19 @@ flutter:
   - assets/images/5.png
   - assets/images/6.png
 
-#songs import
-  - assets/songs/cao.mp3
-  - assets/songs/gato.mp3
-  - assets/songs/leao.mp3
-  - assets/songs/macaco.mp3
-  - assets/songs/ovelha.mp3
-  - assets/songs/vaca.mp3
-  - assets/songs/1.mp3
-  - assets/songs/2.mp3
-  - assets/songs/3.mp3
-  - assets/songs/4.mp3
-  - assets/songs/5.mp3
-  - assets/songs/6.mp3
+#audio import
+  - assets/audio/cao.mp3
+  - assets/audio/gato.mp3
+  - assets/audio/leao.mp3
+  - assets/audio/macaco.mp3
+  - assets/audio/ovelha.mp3
+  - assets/audio/vaca.mp3
+  - assets/audio/1.mp3
+  - assets/audio/2.mp3
+  - assets/audio/3.mp3
+  - assets/audio/4.mp3
+  - assets/audio/5.mp3
+  - assets/audio/6.mp3
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
