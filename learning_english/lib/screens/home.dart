@@ -4,6 +4,8 @@ import 'package:learning_english/screens/numbers.dart';
 import 'package:learning_english/screens/vowels.dart';
 
 class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -14,7 +16,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -37,7 +39,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               controller: _tabController,
               indicatorWeight: 4,
               indicatorColor: Colors.white,
-              labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              labelStyle:
+                  const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               tabs: [
                 Tab(
                   text: "Animais",

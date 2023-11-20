@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 class Vowels extends StatefulWidget {
+  const Vowels({super.key});
+
   @override
   _VowelsState createState() => _VowelsState();
 }
